@@ -56,7 +56,7 @@ def _plotly_dark_layout(**extra):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  STEP 1 – DATA LOADING  (unchanged)
+#  STEP 1 – DATA LOADING 
 # ══════════════════════════════════════════════════════════════════════════════
 
 def load_nino34(path):
@@ -147,7 +147,7 @@ def load_and_merge(nino_path, soi_path, olr_path, sst_path):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  STEP 2 – FEATURE ENGINEERING  (unchanged)
+#  STEP 2 – FEATURE ENGINEERING  
 # ══════════════════════════════════════════════════════════════════════════════
 
 FEATURE_COLS = ["nino34", "soi", "olr", "sst_india"]
@@ -185,7 +185,7 @@ def time_split(X, y, times, train_frac=0.80):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  STEP 4 – MODEL  (unchanged)
+#  STEP 4 – MODEL  ]
 # ══════════════════════════════════════════════════════════════════════════════
 
 def train_ridge(X_tr, y_tr, alpha=1.0):
@@ -197,7 +197,7 @@ def train_ridge(X_tr, y_tr, alpha=1.0):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  STEP 5 – EVALUATION  (unchanged)
+#  STEP 5 – EVALUATION 
 # ══════════════════════════════════════════════════════════════════════════════
 
 def evaluate(y_true, y_pred, lead):
@@ -218,7 +218,7 @@ def print_metrics_table(results):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  STEP 6 – INTERACTIVE VISUALISATION  (Plotly, saved as HTML)
+#  STEP 6 – INTERACTIVE VISUALISATION 
 # ══════════════════════════════════════════════════════════════════════════════
 
 def _lead_color(lead):
@@ -264,7 +264,7 @@ def plot_predictions(results_dict, out_dir):
             f"<b>Predicted:</b> {p:.3f} °C"
             for ts, a, p in zip(t, y_true, y_pred)
         ]
-        hover_pred = hover_actual  # same rich tooltip on both traces
+        hover_pred = hover_actual 
 
         # Shaded El Niño / La Niña bands
         fig.add_trace(go.Scatter(
@@ -497,18 +497,15 @@ def run_pipeline(nino_path, soi_path, olr_path, sst_path,
 if __name__ == "__main__":
     import os
 
-    # Go from src/ridge/main.py → project root
     BASE_DIR = os.path.dirname(
                     os.path.dirname(
                         os.path.dirname(os.path.abspath(__file__))
                     )
                 )
 
-    # Define folders
     DATA_DIR = os.path.join(BASE_DIR, "data")
     OUTPUT_DIR = os.path.join(BASE_DIR, "outputs", "ridge")
 
-    # Ensure output folder exists
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     run_pipeline(
