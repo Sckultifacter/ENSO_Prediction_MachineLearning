@@ -55,7 +55,7 @@ def _plotly_dark_layout(**extra):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  STEP 1 – DATA LOADING  (unchanged)
+#  STEP 1 – DATA LOADING
 # ══════════════════════════════════════════════════════════════════════════════
 
 def load_nino34(path):
@@ -146,7 +146,7 @@ def load_and_merge(nino_path, soi_path, olr_path, sst_path):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  STEP 2 – FEATURE ENGINEERING  (unchanged)
+#  STEP 2 – FEATURE ENGINEERING \
 # ══════════════════════════════════════════════════════════════════════════════
 
 FEATURE_COLS = ["nino34", "soi", "olr", "sst_india"]
@@ -172,7 +172,7 @@ def build_dataset(df, lead, lags=LAG_MONTHS):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  STEP 3 – TRAIN / TEST SPLIT  (unchanged)
+#  STEP 3 – TRAIN / TEST SPLIT 
 # ══════════════════════════════════════════════════════════════════════════════
 
 def time_split(X, y, times, train_frac=0.80):
@@ -184,7 +184,7 @@ def time_split(X, y, times, train_frac=0.80):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  STEP 4 – MODEL  (Random Forest — no StandardScaler needed)
+#  STEP 4 – MODEL 
 # ══════════════════════════════════════════════════════════════════════════════
 
 def train_random_forest(X_tr, y_tr):
@@ -194,7 +194,7 @@ def train_random_forest(X_tr, y_tr):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  STEP 5 – EVALUATION  (unchanged)
+#  STEP 5 – EVALUATION 
 # ══════════════════════════════════════════════════════════════════════════════
 
 def evaluate(y_true, y_pred, lead):
@@ -215,7 +215,7 @@ def print_metrics_table(results):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  STEP 6 – INTERACTIVE VISUALISATION  (unchanged except titles)
+#  STEP 6 – INTERACTIVE VISUALISATION 
 # ══════════════════════════════════════════════════════════════════════════════
 
 def _lead_color(lead):
