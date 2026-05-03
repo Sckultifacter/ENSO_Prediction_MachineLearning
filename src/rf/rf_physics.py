@@ -491,7 +491,7 @@ def run_pipeline(nino_path, soi_path, olr_path, sst_path,
     all_metrics  = []
     results_dict = {}
 
-    print("Training Random Forest models\n")
+    print("Training Random Forest models(using physics)\n")
     for lead in lead_times:
         # Physics note: skill degrades sharply at long leads due to the
         # Spring Predictability Barrier (March–May atmospheric noise)
