@@ -57,7 +57,7 @@ def _plotly_dark_layout(**extra):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  STEP 1 – DATA LOADING  (unchanged)
+#  STEP 1 – DATA LOADING 
 # ══════════════════════════════════════════════════════════════════════════════
 
 def load_nino34(path):
@@ -233,7 +233,7 @@ def build_dataset(df, lead, lags=LAG_MONTHS):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  STEP 3 – TRAIN / TEST SPLIT  (unchanged)
+#  STEP 3 – TRAIN / TEST SPLIT
 # ══════════════════════════════════════════════════════════════════════════════
 
 def time_split(X, y, times, train_frac=0.80):
@@ -257,7 +257,7 @@ def train_ridge(X_tr, y_tr, alpha=1.0):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  STEP 5 – EVALUATION  (unchanged)
+#  STEP 5 – EVALUATION]
 # ══════════════════════════════════════════════════════════════════════════════
 
 def evaluate(y_true, y_pred, lead):
@@ -278,7 +278,7 @@ def print_metrics_table(results):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  STEP 6 – INTERACTIVE VISUALISATION  (unchanged)
+#  STEP 6 – INTERACTIVE VISUALISATION 
 # ══════════════════════════════════════════════════════════════════════════════
 
 def _lead_color(lead):
